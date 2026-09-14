@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Afnan Altarjami — AI Researcher</title>
+<title>Afnan Altarjami — AI Engineer &amp; Researcher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#FAF8F4;
-    --ink:#181B20;
-    --indigo:#2C3A66;
-    --indigo-dim:#4C5A85;
-    --amber:#B9852F;
-    --line:#DFDCD3;
+    --paper:#FBF6F5;
+    --ink:#1B1F27;
+    --purple:#8C6E85;
+    --purple-dim:#A98A9E;
+    --pink:#C97B95;
+    --pink-soft:#E8C7D2;
+    --line:#F0DEE3;
     --muted:#6B6F76;
   }
   *{box-sizing:border-box;}
@@ -31,8 +32,14 @@
     padding:0 28px;
   }
   header.hero{
-    padding:76px 0 40px;
-    border-bottom:1px solid var(--line);
+    margin:0 0 0;
+    padding:64px 28px 44px;
+    background:linear-gradient(120deg, var(--purple) 0%, var(--pink) 100%);
+    color:#F5F3EC;
+  }
+  header.hero .wrap-inner{
+    max-width:760px;
+    margin:0 auto;
   }
   .eyebrow-row{
     display:flex;
@@ -40,24 +47,25 @@
     align-items:baseline;
     flex-wrap:wrap;
     gap:8px 16px;
-    margin-bottom:22px;
-    font-size:14px;
-    color:var(--muted);
+    margin-bottom:24px;
+    font-size:13.5px;
+    color:#E7E9EE;
+    opacity:.9;
   }
   h1{
     font-family:'Source Serif 4', serif;
     font-weight:700;
     font-size:clamp(34px,6vw,52px);
     line-height:1.08;
-    margin:0 0 10px;
-    color:var(--indigo);
+    margin:0 0 12px;
+    color:#FFFFFF;
   }
   .tagline{
     font-family:'Source Serif 4', serif;
     font-style:italic;
     font-size:19px;
-    color:var(--indigo-dim);
-    margin:0 0 22px;
+    color:#F5E1E8;
+    margin:0 0 24px;
   }
   .contact-row{
     display:flex;
@@ -65,23 +73,43 @@
     gap:6px 18px;
     font-size:14px;
   }
-  .contact-row a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line);}
-  .contact-row a:hover{border-color:var(--amber);}
+  .contact-row a{color:#F5F3EC; text-decoration:none; border-bottom:1px solid rgba(245,243,236,.4);}
+  .contact-row a:hover{border-color:var(--pink-soft);}
+
+  .link-row{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:14px;
+    font-size:14px;
+  }
+  .link-row a{color:#F5F3EC; text-decoration:none; border-bottom:1px solid rgba(245,243,236,.4);}
+  .link-row a:hover{border-color:var(--pink-soft);}
+  .link-row .sep{color:rgba(245,243,236,.5);}
+  .link-row .cv-btn{
+    border:1px solid rgba(245,243,236,.6);
+    border-radius:20px;
+    padding:5px 14px;
+    font-weight:500;
+  }
+  .link-row .cv-btn:hover{background:rgba(245,243,236,.12); border-color:var(--pink-soft);}
 
   nav.jump{
     display:flex;
     gap:22px;
     flex-wrap:wrap;
-    padding:14px 0;
+    padding:14px 28px;
     font-size:14px;
     border-bottom:1px solid var(--line);
     position:sticky;
     top:0;
     background:var(--paper);
     z-index:10;
+    justify-content:center;
   }
-  nav.jump a{color:var(--indigo-dim); text-decoration:none;}
-  nav.jump a:hover{color:var(--amber);}
+  nav.jump a{color:var(--purple-dim); text-decoration:none; font-weight:500;}
+  nav.jump a:hover{color:var(--pink-soft);}
 
   section{
     padding:44px 0;
@@ -93,8 +121,19 @@
     font-family:'Source Serif 4', serif;
     font-size:22px;
     font-weight:600;
-    color:var(--indigo);
+    color:var(--purple);
     margin:0 0 20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  h2::before{
+    content:"";
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--pink-soft);
+    display:inline-block;
   }
 
   p.summary{
@@ -116,15 +155,25 @@
     font-style:italic;
     margin:0 0 6px;
   }
+  .entry-honor{
+    display:inline-block;
+    margin-top:4px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--pink);
+    background:rgba(15,118,110,.09);
+    padding:3px 9px;
+    border-radius:20px;
+  }
   .entry-body{font-size:15px; color:#33373D;}
-  .entry a{color:var(--indigo); word-break:break-word;}
+  .entry a{color:var(--pink); word-break:break-word;}
 
   .subhead{
     font-size:13px;
     letter-spacing:.02em;
-    color:var(--amber);
+    color:var(--pink-soft);
     font-weight:600;
-    margin:0 0 14px;
+    margin:28px 0 14px;
   }
 
   .skill-group{margin-bottom:14px; font-size:14.5px;}
@@ -132,73 +181,106 @@
   .skill-group span{color:#4A4E54;}
 
   .cert-grid{display:flex; flex-direction:column; gap:16px;}
-  .cert{border-left:2px solid var(--line); padding-left:14px;}
+  .cert{border-left:3px solid var(--pink); padding-left:14px;}
   .cert-title{font-weight:600; font-size:15px;}
   .cert-org{font-size:13.5px; color:var(--muted); font-style:italic;}
+
+  .lang-list{display:flex; gap:28px; flex-wrap:wrap;}
+  .lang-item{
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 22px;
+    min-width:150px;
+  }
+  .lang-name{font-weight:600; font-size:16px; color:var(--purple); margin:0 0 4px;}
+  .lang-level{font-size:13.5px; color:var(--muted);}
 
   footer{
     padding:36px 0 60px;
     font-size:13.5px;
     color:var(--muted);
   }
-  footer a{color:var(--indigo-dim);}
+  footer a{color:var(--purple-dim);}
 
   @media (max-width:520px){
-    header.hero{padding:52px 0 32px;}
-    nav.jump{gap:14px 18px;}
+    header.hero{padding:48px 20px 32px;}
+    nav.jump{gap:14px 18px; padding:14px 20px;}
   }
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header class="hero">
+<header class="hero">
+  <div class="wrap-inner">
     <div class="eyebrow-row">
-      <span>Yarmouk University — M.Sc. AI, 2026</span>
+      <span>M.Sc. Artificial Intelligence — Yarmouk University, 2026</span>
       <span>Saudi Arabia</span>
     </div>
     <h1>Afnan Altarjami</h1>
-    <p class="tagline">Artificial Intelligence Researcher — Arabic NLP &amp; Intelligent Systems</p>
+    <p class="tagline">AI Engineer &amp; Researcher — Problem Solver</p>
     <div class="contact-row">
       <a href="mailto:afnanaltarjami@gmail.com">afnanaltarjami@gmail.com</a>
-      <span>+966 505190248</span>
     </div>
-  </header>
+    <div class="link-row">
+      <a href="https://www.linkedin.com/in/afnan-altarjami-1420b7287" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="sep">·</span>
+      <a href="https://scholar.google.com/citations?user=vqicBbIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <span class="sep">·</span>
+      <a href="Afnan_Altarjami_CV.pdf" class="cv-btn" download>Download CV (PDF)</a>
+    </div>
+  </div>
+</header>
 
-  <nav class="jump">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#projects">Projects</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#skills">Skills</a>
-  </nav>
+<nav class="jump">
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#research">Research</a>
+  <a href="#projects">Projects</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#skills">Skills</a>
+  <a href="#languages">Languages</a>
+</nav>
+
+<div class="wrap">
 
   <section id="about">
     <h2>About</h2>
-    <p class="summary">Artificial Intelligence and Computer Science graduate with strong academic and practical experience in developing intelligent systems and data-driven solutions. Experienced in Machine Learning, Deep Learning, Computer Vision, Data Analysis, Expert Systems, and Software Development. Work spans healthcare, transportation, agriculture, recommendation systems, and intelligent automation, with a particular focus on Arabic NLP.</p>
+    <p class="summary">Artificial Intelligence and Computer Science graduate with strong academic and practical experience in developing intelligent systems and data-driven solutions. Experienced in Machine Learning, Deep Learning, Computer Vision, Data Analysis, Expert Systems, and Software Development. Passionate about solving real-world problems and delivering innovative solutions with measurable impact across healthcare, transportation, agriculture, and intelligent automation.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="entry">
+      <p class="entry-title">Master of Science in Artificial Intelligence</p>
+      <p class="entry-meta">Yarmouk University, Jordan · 2026</p>
+      <span class="entry-honor">Graduated with Excellent — Honors</span>
+    </div>
+    <div class="entry">
+      <p class="entry-title">Bachelor of Science in Computer Science</p>
+      <p class="entry-meta">Taibah University, Saudi Arabia · 2023</p>
+      <span class="entry-honor">Graduated with Excellent — Honors</span>
+    </div>
   </section>
 
   <section id="research">
     <h2>Research &amp; Publications</h2>
     <div class="entry">
       <p class="entry-title">HMA-RAG: A Hierarchical Memory-Augmented RAG Framework for Fake News Detection</p>
-      <p class="entry-meta">Co-author · Journal of Computer Science (2026)</p>
+      <p class="entry-meta">First Author · Journal of Computer Science (2026)</p>
       <p class="entry-body"><a href="https://thescipub.com/abstract/10.3844/jcssp.2026.2700.2710" target="_blank" rel="noopener">thescipub.com/abstract/10.3844/jcssp.2026.2700.2710</a></p>
-    </div>
-
-    <p class="subhead">Under Review</p>
-    <div class="entry">
-      <p class="entry-title">Identification of AI-Generated Dialectal Arabic Text Using Hybrid Transformer-Stylometric Fusion</p>
-      <p class="entry-meta">Co-author · IEEE Transactions on Artificial Intelligence (2026)</p>
-    </div>
-    <div class="entry">
-      <p class="entry-title">Day-Ahead PV Power Forecasting Using Deep Learning Architectures</p>
-      <p class="entry-meta">Co-author (2026)</p>
     </div>
   </section>
 
   <section id="projects">
     <h2>AI &amp; Software Projects</h2>
+    <div class="entry">
+      <p class="entry-title">Identification of AI-Generated Dialectal Arabic Text Using Hybrid Transformer-Stylometric Fusion</p>
+      <p class="entry-body">Combined transformer-based models with stylometric features to detect AI-generated dialectal Arabic text with high accuracy.</p>
+    </div>
+    <div class="entry">
+      <p class="entry-title">Day-Ahead PV Power Forecasting Using Deep Learning Architectures</p>
+      <p class="entry-body">Developed deep learning architectures to forecast next-day photovoltaic power output for improved energy planning.</p>
+    </div>
     <div class="entry">
       <p class="entry-title">DocTamper-SAM: Document Tampering Detection System</p>
       <p class="entry-body">Adapted the Segment Anything Model (SAM) with FA-LoRA, EAPG, and CRT modules for document forgery localization.</p>
@@ -257,14 +339,25 @@
 
   <section id="skills">
     <h2>Technical Skills</h2>
-    <div class="skill-group"><b>Programming:</b> <span>Python, Java, C++, SQL</span></div>
+    <div class="skill-group"><b>Programming:</b> <span>Python, Java, SQL</span></div>
     <div class="skill-group"><b>AI &amp; Machine Learning:</b> <span>Machine Learning, Deep Learning, Neural Networks, Computer Vision, NLP, Generative AI, Retrieval-Augmented Generation (RAG), Expert Systems, Data Mining, Predictive Analytics</span></div>
     <div class="skill-group"><b>Deep Learning Frameworks:</b> <span>TensorFlow, Keras, PyTorch, Scikit-learn</span></div>
     <div class="skill-group"><b>Computer Vision:</b> <span>OpenCV, Object Detection, Image Classification, Image Segmentation, Medical Image Analysis</span></div>
     <div class="skill-group"><b>NLP &amp; Language Models:</b> <span>Transformers, BERT, AraBERT, AraELECTRA, GPT Models, LSTM, Text Classification, Sentiment Analysis, Information Retrieval</span></div>
     <div class="skill-group"><b>Data Analysis:</b> <span>NumPy, Pandas, Matplotlib, Data Preprocessing, Feature Engineering</span></div>
     <div class="skill-group"><b>Databases &amp; Tools:</b> <span>MySQL, SQL Server, Jupyter Notebook, Google Colab, Git &amp; GitHub, VS Code</span></div>
-    <div class="skill-group"><b>Languages:</b> <span>Arabic, English</span></div>
+  </section>
+
+  <section id="languages">
+    <h2>Languages</h2>
+    <div class="lang-list">
+      <div class="lang-item">
+        <p class="lang-name">Arabic</p>
+      </div>
+      <div class="lang-item">
+        <p class="lang-name">English</p>
+      </div>
+    </div>
   </section>
 
   <footer>
